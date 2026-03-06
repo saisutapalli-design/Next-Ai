@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-gl-orange: #FF5A00;
+  --color-gl-dark: #0A0A0A;
+  --color-gl-gray: #F8F9FA;
+  --color-gl-surface: #FFFFFF;
+  --color-gl-surface-dark: #121212;
+  
+  --color-nextai-primary: var(--color-gl-orange);
+  --color-nextai-secondary: #E64A19;
+  --color-nextai-accent: #212121;
+}
+
+@layer base {
+  * {
+    @apply transition-colors duration-300;
+  }
+
+  body {
+    @apply bg-gl-gray text-slate-900 font-sans antialiased;
+  }
+
+  .dark body {
+    @apply bg-gl-dark text-slate-100;
+  }
+}
+
+.glass {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm transition-all;
+}
+
+.dark .glass {
+  @apply bg-black/40 border-white/10;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+.gl-gradient {
+  background: linear-gradient(135deg, #FF5A00 0%, #FF8A00 100%);
+}
+
+.gl-glow {
+  box-shadow: 0 0 20px rgba(255, 90, 0, 0.2);
+}
+
+.dark .gl-glow {
+  box-shadow: 0 0 30px rgba(255, 90, 0, 0.3);
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-gl-dark;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20;
+}

@@ -1,0 +1,5 @@
+{
+  "name": "NEXT AI Capability Platform",
+  "description": "Enterprise AI capability marketplace and knowledge repository for discovering AI solutions, POCs, and assets.",
+  "requestFramePermissions": ["geolocation"]
+}
